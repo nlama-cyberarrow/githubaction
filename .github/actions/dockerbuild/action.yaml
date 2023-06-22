@@ -24,9 +24,7 @@ runs:
       shell: bash
     - run: |
           cd grc
-          ls
+          ls -lR
       shell: bash
-    - run: ls -lR
-      shell: bash
-
+    
 
