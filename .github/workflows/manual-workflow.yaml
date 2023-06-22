@@ -1,6 +1,8 @@
 
 name: example-workflow
 on: [push]
+  secrets:
+    
 
 env:
   TARGET_BRANCH: ${{ github.ref_name }}
