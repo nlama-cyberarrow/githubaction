@@ -1,10 +1,10 @@
 
 name: example-workflow
-on: [push]
-    
+on: [ push ]
+
 env:
   TARGET_BRANCH: ${{ github.ref_name }}
-
+  
 jobs:
   production-deploy:
     if: github.ref_name == 'production'

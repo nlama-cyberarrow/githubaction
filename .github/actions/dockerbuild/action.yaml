@@ -1,6 +1,8 @@
 name: build_job
-autho: "LamaDai"
+
+author: "LamaDai"
 description: "Calling Me to Build"
+
 runs:
   using: 'composite'
   steps:
@@ -24,13 +26,6 @@ runs:
           cd grc
           ls
       shell: bash
-    - name: Checkout private tools
-      uses: actions/checkout@v3
-      secrets: inherit
-      with:
-        repository: cyberarrow-io/grc-dock
-        token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
-        path: grc-child
     - run: ls -lR
       shell: bash
 
