@@ -1,12 +1,13 @@
 name: build_job
 
-calling_build_job:
-  runs-on: ubuntu-latest
-  steps:
-    - run echo "Git Clone"
-    - run echo "Composer Build"
-    - run echo "Yarn Build"
-    - run echo "Nginx Container Build"
-    - run echo "PHP-FPM Container Build"
-    - run echo "Docker-compose up"
-    - run echo "PHP Migrate DB"
+jobs:
+  calling_build_job:
+    runs-on: ubuntu-latest
+    steps:
+      - run echo "Git Clone"
+      - run echo "Composer Build"
+      - run echo "Yarn Build"
+      - run echo "Nginx Container Build"
+      - run echo "PHP-FPM Container Build"
+      - run echo "Docker-compose up"
+      - run echo "PHP Migrate DB"
