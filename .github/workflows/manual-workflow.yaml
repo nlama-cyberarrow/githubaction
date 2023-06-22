@@ -3,7 +3,7 @@ name: example-workflow
 on: [push]
 
 env:
-  TARGET_BRANCH: ${{ github.base_ref }}
+  TARGET_BRANCH: ${{ github.ref_name }}
 
 jobs:
   production-deploy:
@@ -13,6 +13,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: echo "This is Production"
       - run: echo ${{ env.TARGET_BRANCH }}
+      - run: echo "PRINT ${{ github.ref_name }}"
 
 
 
