@@ -7,13 +7,21 @@ env:
 
 jobs:
   production-deploy:
-    #if: github.ref == 'production'
+    if: github.ref == 'production'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: echo "This is Production"
       - run: echo ${{ env.TARGET_BRANCH }}
       - run: echo "PRINT ${{ github.ref_name }}"
-
+  main:
+    if: github.ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "This is Main"
+      - run: echo ${{ env.TARGET_BRANCH }}
+      - run: echo "PRINT ${{ github.ref_name }}"
+    
 
 
