@@ -3,13 +3,19 @@ autho: "LamaDai"
 description: "Calling Me to Build"
 runs:
   using: 'composite'
-  shell: bash 
   steps:
     - run: echo "Git Clone"
+      shell: bash 
     - run: echo "Composer Build"
+      shell: bash 
     - run: echo "Yarn Build"
+      shell: bash 
     - run: echo "Nginx Container Build"
+      shell: bash 
     - run: echo "PHP-FPM Container Build"
+      shell: bash 
     - run: echo "Docker-compose up"
+      shell: bash 
     - run: echo "PHP Migrate DB"
+      shell: bash 
 
