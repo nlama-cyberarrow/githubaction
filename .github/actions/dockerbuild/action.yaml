@@ -18,12 +18,12 @@ runs:
       shell: bash 
     - run: echo "PHP Migrate DB"
       shell: bash 
-  - name: Checkout private tools
-    uses: actions/checkout@v3
-    with:
-      repository: cyberarrow-io/grc-dock
-      token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
-      path: grc
-  - run: ls
-    shell: bash
+    - name: Checkout private tools
+      uses: actions/checkout@v3
+      with:
+        repository: cyberarrow-io/grc-dock
+        token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+        path: grc
+    - run: ls
+      shell: bash
 
