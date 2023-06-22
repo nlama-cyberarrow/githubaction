@@ -1,16 +1,18 @@
-name: manual-workflow
 
-on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Please Provide where you want to launch'
-        default: 'devops'
-        required: true
+name: example-workflow
+on: [push]
+
+env:
+  TARGET_BRANCH: ${{ github.base_ref }}
+
 jobs:
-  greet:
+  production-deploy:
+    if: github.ref == 'production'
     runs-on: ubuntu-latest
     steps:
-      - name: Send greeting
-        run: echo "Hello ${{ github.event.inputs.name }}"
-        
+      - uses: actions/checkout@v3
+      - run: This is Production
+      - run: echo $TARGET_BRANCH
+
+
+
