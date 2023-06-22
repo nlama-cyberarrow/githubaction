@@ -3,6 +3,7 @@ autho: "LamaDai"
 description: "Calling Me to Build"
 runs:
   using: 'composite'
+  shell: bash 
   steps:
     - run: echo "Git Clone"
     - run: echo "Composer Build"
@@ -11,3 +12,4 @@ runs:
     - run: echo "PHP-FPM Container Build"
     - run: echo "Docker-compose up"
     - run: echo "PHP Migrate DB"
+
