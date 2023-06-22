@@ -1,0 +1,16 @@
+name: manual-workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Please Provide where you want to launch'
+        default: 'devops'
+        required: true
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send greeting
+        run: echo "Hello ${{ github.event.inputs.name }}"
+        
