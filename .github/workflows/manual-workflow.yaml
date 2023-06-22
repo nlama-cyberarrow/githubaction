@@ -3,16 +3,27 @@ name: example-workflow
 on: [push]
 
 env:
-  TARGET_BRANCH: ${{ github.base_ref }}
+  TARGET_BRANCH: ${{ github.ref_name }}
 
 jobs:
   production-deploy:
-    if: github.ref == 'production'
+    if: github.ref_name == 'production'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: This is Production
-      - run: echo $TARGET_BRANCH
-
+      - run: echo "This is Production"
+      - run: hostname
+      - run: echo ${{ env.TARGET_BRANCH }}
+      - run: echo "PRINT ${{ github.ref_name }}"
+  main:
+    if: github.ref_name == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: hostname
+      - run: echo "This is Main"
+      - run: echo ${{ env.TARGET_BRANCH }}
+      - run: echo "PRINT ${{ github.ref_name }}"
+    
 
 
