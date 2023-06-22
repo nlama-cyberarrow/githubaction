@@ -24,5 +24,11 @@ jobs:
       - run: echo "This is Main"
       - run: echo ${{ env.TARGET_BRANCH }}
       - run: echo "PRINT ${{ github.ref_name }}"
+      - name: Checkout private tools
+        uses: actions/checkout@v3
+        with:
+          repository: cyberarrow-io/grc-dock
+          token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+          path: grc
       - name: dockerbuild
         uses: ./.github/actions/dockerbuild
