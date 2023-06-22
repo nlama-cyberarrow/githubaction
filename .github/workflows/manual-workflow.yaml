@@ -24,7 +24,7 @@ jobs:
       - run: echo "This is Main"
       - run: echo ${{ env.TARGET_BRANCH }}
       - run: echo "PRINT ${{ github.ref_name }}"
-      - uses: ./.github/actions/action.yaml
+      - uses: ./.github/actions/
     
 
 
