@@ -1,4 +1,5 @@
 name: build_job
+on: 
 
 jobs:
   calling_build_job:
