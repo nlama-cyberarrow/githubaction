@@ -24,7 +24,7 @@ jobs:
       - run: echo "This is Main"
       - run: echo ${{ env.TARGET_BRANCH }}
       - run: echo "PRINT ${{ github.ref_name }}"
-      - run: echo ${{toJson(github)}}
+      - run: echo ${{ toJson(github) }}
       - name: Checkout private tools
         uses: actions/checkout@v3
         with:
