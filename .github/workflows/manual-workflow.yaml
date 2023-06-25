@@ -29,7 +29,7 @@ jobs:
       - run: echo "${{ env.TARGET_BRANCH }}"
       - run: echo "PRINT ${{ github.ref_name }}"
       #- run: echo "${{ toJson(github) }}"
-      - run: ls -al
+      - run: ls -alh
       - run: pwd
       - run: |
           apk update && apk add --no-cache ldb-dev libldap openldap-dev
@@ -40,7 +40,8 @@ jobs:
         continue-on-error: true
       - run: |
           echo "after"
-          ls -al
+          ls -alh
+          du -sh 
       # - name: Checkout private tools
       #   uses: actions/checkout@v3
       #   with:
