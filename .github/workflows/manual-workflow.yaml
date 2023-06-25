@@ -28,10 +28,17 @@ jobs:
       - run: echo "This is Main"
       - run: echo "${{ env.TARGET_BRANCH }}"
       - run: echo "PRINT ${{ github.ref_name }}"
-      - run: echo "${{ toJson(github) }}"
+      #- run: echo "${{ toJson(github) }}"
+      - run: ls -al
       - run: |
+          apk update && apk add --no-cache ldb-dev libldap openldap-dev
+          apk add --no-cache libjpeg-turbo-dev libpng-dev libwebp-dev freetype-dev
+          docker-php-ext-install pdo pdo_mysql bcmath ldap gd
           composer config http-basic.nova.laravel.com amar.basic@ebdaa.ae NELnZbvh71coTUGzZmf52x3E88AXz56bvpPPZCa4
           composer install
+      - run: |
+          echo "after"
+          ls -al
       # - name: Checkout private tools
       #   uses: actions/checkout@v3
       #   with:
