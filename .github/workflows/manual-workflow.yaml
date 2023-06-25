@@ -18,6 +18,8 @@ jobs:
   main:
     if: github.ref_name == 'main'
     runs-on: ubuntu-latest
+    container:
+      image: ubuntu
     steps:
       - uses: actions/checkout@v3
       - run: hostname
