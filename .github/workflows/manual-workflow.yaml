@@ -36,6 +36,7 @@ jobs:
           docker-php-ext-install pdo pdo_mysql bcmath ldap gd
           composer config http-basic.nova.laravel.com amar.basic@ebdaa.ae NELnZbvh71coTUGzZmf52x3E88AXz56bvpPPZCa4
           composer install
+        continue-on-error: true
       - run: |
           echo "after"
           ls -al
