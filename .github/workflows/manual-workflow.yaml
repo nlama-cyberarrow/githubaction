@@ -31,6 +31,7 @@ jobs:
       #- run: echo "${{ toJson(github) }}"
       - run: ls -al
       - run: |
+          pwd
           apk update && apk add --no-cache ldb-dev libldap openldap-dev
           apk add --no-cache libjpeg-turbo-dev libpng-dev libwebp-dev freetype-dev
           docker-php-ext-install pdo pdo_mysql bcmath ldap gd
