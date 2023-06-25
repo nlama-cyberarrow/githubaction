@@ -19,7 +19,7 @@ jobs:
     if: github.ref_name == 'main'
     runs-on: ubuntu-latest
     container:
-      image: composer2
+      image: composer:2
     steps:
       - uses: actions/checkout@v3
       - run: hostname
