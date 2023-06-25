@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: composer:2
+      options:
+        --workdir /var/www/html
     steps:
       - uses: actions/checkout@v3
       - run: hostname
@@ -27,11 +29,14 @@ jobs:
       - run: echo "${{ env.TARGET_BRANCH }}"
       - run: echo "PRINT ${{ github.ref_name }}"
       - run: echo "${{ toJson(github) }}"
-      - name: Checkout private tools
-        uses: actions/checkout@v3
-        with:
-          repository: cyberarrow-io/grc-dock
-          token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
-          path: grc
-      - name: dockerbuild
-        uses: ./.github/actions/dockerbuild
+      - run: |
+          composer config http-basic.nova.laravel.com amar.basic@ebdaa.ae NELnZbvh71coTUGzZmf52x3E88AXz56bvpPPZCa4
+          composer install
+      # - name: Checkout private tools
+      #   uses: actions/checkout@v3
+      #   with:
+      #     repository: cyberarrow-io/grc-dock
+      #     token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+      #     path: grc
+      # - name: dockerbuild
+      #   uses: ./.github/actions/dockerbuild
