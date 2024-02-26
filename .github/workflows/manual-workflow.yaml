@@ -48,5 +48,5 @@ jobs:
       #     repository: cyberarrow-io/grc-dock
       #     token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
       #     path: grc
-      # - name: dockerbuild
-      #   uses: ./.github/actions/dockerbuild
+      - name: dockerbuild
+        uses: ./.github/actions/dockerbuild

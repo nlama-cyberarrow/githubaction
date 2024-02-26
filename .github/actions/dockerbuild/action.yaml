@@ -1,6 +1,4 @@
 name: build_job
-
-author: "LamaDai"
 description: "Calling Me to Build"
 
 runs:
