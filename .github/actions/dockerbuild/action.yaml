@@ -20,10 +20,4 @@ runs:
       shell: bash 
     - run: ls -lR
       shell: bash
-    - run: |
-          cd grc
-      shell: bash
-    - run: pwd && ls
-      shell: bash
-    
 

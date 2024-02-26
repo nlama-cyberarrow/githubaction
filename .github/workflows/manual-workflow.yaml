@@ -31,13 +31,13 @@ jobs:
       - run: echo "${{ toJson(github) }}"
       - run: ls -alh
       - run: pwd
-      - run: |
-          apk update && apk add --no-cache ldb-dev libldap openldap-dev
-          apk add --no-cache libjpeg-turbo-dev libpng-dev libwebp-dev freetype-dev
-          docker-php-ext-install pdo pdo_mysql bcmath ldap gd
-          composer config http-basic.nova.laravel.com amar.basic@ebdaa.ae NELnZbvh71coTUGzZmf52x3E88AXz56bvpPPZCa4
-          composer install
-        continue-on-error: true
+      # - run: |
+      #     apk update && apk add --no-cache ldb-dev libldap openldap-dev
+      #     apk add --no-cache libjpeg-turbo-dev libpng-dev libwebp-dev freetype-dev
+      #     docker-php-ext-install pdo pdo_mysql bcmath ldap gd
+      #     composer config http-basic.nova.laravel.com amar.basic@ebdaa.ae NELnZbvh71coTUGzZmf52x3E88AXz56bvpPPZCa4
+      #     composer install
+      #   continue-on-error: true
       - run: |
           echo "after"
           ls -alh
